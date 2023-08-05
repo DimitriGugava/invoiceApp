@@ -1,0 +1,264 @@
+.mainContainer {
+  width: auto;
+  height: 2500px;
+  background: var(--11, #f8f8fb);
+  margin: 0px auto;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 0px auto !important;
+  height: 72px;
+  flex-shrink: 0;
+  background: #373b53;
+}
+.headerIcon {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.moon {
+  width: 19.988px;
+  height: 19.905px;
+  margin: 26px 100px;
+  flex-shrink: 0;
+  fill: var(--07, #7e88c3);
+}
+.headerLine {
+  width: 1px;
+  height: 72px;
+  margin: 0px 0px;
+  flex-shrink: 0;
+  background: #6e4949;
+}
+.profilePhoto {
+  width: 32px;
+  height: 32px;
+  margin: 0px 24px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: lightgray 50% / cover no-repeat;
+}
+
+.invoice_List_Add_Box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 32px auto;
+  width: 327px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.invoice_Box {
+  width: 78px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3px;
+}
+.header_Text_Invoince {
+  width: 78px;
+  height: 20px;
+  color: var(--08, #0c0e16);
+  font-family: "League Spartan";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.75px;
+}
+.number_Of_Invoices_Text {
+  display: inline-block;
+  width: 78px;
+  height: 15px;
+  color: var(--06, #888eb0);
+  font-family: "League Spartan";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: -0.1px;
+}
+.filter_Box {
+  display: flex;
+  margin: 0px 55px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 12px;
+}
+
+.filter_Text {
+  color: var(--08, #0c0e16);
+  text-align: right;
+  font-family: "League Spartan";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px; /* 100% */
+  letter-spacing: -0.25px;
+}
+.downArrow {
+  width: 8.456px;
+  height: 4.228px;
+  gap: 12px;
+  stroke-width: 2px;
+  stroke: var(--01, #7c5dfa);
+}
+.downArrow:hover {
+  cursor: pointer;
+}
+
+.addInvoiceIcon {
+  width: 90px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.addInvoiceIcon:hover {
+  cursor: pointer;
+}
+.addInvoiceIcon:active {
+  transform: scale(0.99);
+}
+.invoice_Info_Box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 327px;
+  height: 134px;
+  margin: 32px auto;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.1);
+}
+.invoice_Info_subBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 25px auto;
+  gap: 129px;
+  width: 279px;
+  height: auto;
+}
+.invoice_Number {
+  color: var(--08, #0c0e16);
+  font-family: "League Spartan";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+.invoice_Owner {
+  color: #858bb2;
+  text-align: right;
+  font-family: "League Spartan";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: -0.1px;
+}
+
+.invoice_Info_Second_subBox_Main {
+  width: 279px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 93px;
+}
+.invoice_Info_Second_subBox {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 9px;
+}
+.invoice_Due_Date {
+  color: var(--06, #888eb0);
+  font-family: "League Spartan";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: -0.1px;
+}
+.invoice_Ammount {
+  color: var(--08, #0c0e16);
+  font-family: "League Spartan";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+}
+
+.status_Box {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.statusOval {
+  width: 8px;
+  height: 8px;
+  background-color: #33d69f;
+  border-radius: 50px;
+  fill: #33d69f;
+}
+.status_text {
+  color: #33d69f;
+  font-family: "League Spartan";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.empty_Box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px auto;
+  width: 206px;
+  height: 278px;
+  flex-shrink: 0;
+}
+
+.empty_Text_Box {
+  display: flex;
+  width: 206px;
+  flex-direction: column;
+  margin: 48px auto;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.empty_Text {
+  color: var(--08, #0c0e16);
+  font-family: "League Spartan";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.75px;
+}
+
+.empty_Text2 {
+  color: var(--06, #888eb0);
+  text-align: center;
+  font-family: "League Spartan";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px; /* 115.385% */
+  letter-spacing: -0.1px;
+}
