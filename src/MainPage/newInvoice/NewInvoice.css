@@ -24,6 +24,10 @@
   height: 28px;
   margin: 33px 24px;
 }
+.goBack:hover {
+  cursor: pointer;
+}
+
 .goBackText {
   color: var(--08, #0c0e16);
   font-family: "League Spartan";
@@ -32,6 +36,9 @@
   font-weight: 700;
   line-height: 15px;
   letter-spacing: -0.25px;
+}
+.goBackText:hover {
+  cursor: pointer;
 }
 
 .newInvoice_Large_Text {

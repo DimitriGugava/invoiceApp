@@ -10,16 +10,23 @@ import NewInvoice from "./newInvoice/NewInvoice";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
+import { useContext, createContext } from "react";
 const MainPage = (props: any) => {
   const [showInvoiceBox, setShowInvoiceBox] = useState<boolean>(true);
   const [isNewInvoice, setIsNewInvoice] = useState<boolean>(false);
   const [newInvoicePage, setNewInvoicePage] = useState<boolean>(false);
   const [emptyBox, setEmptyBox] = useState<boolean>(false);
+  const [formData, setFormData] = useState<any[]>([]);
+  const [shouldSubmitForm, setShouldSubmitForm] = useState(false);
 
-  const addNewInvoicePAge = () => {
+  const addNewInvoicePage = () => {
     setNewInvoicePage(true);
     setShowInvoiceBox(false);
+  };
+  const onSubmit = (data: any) => {
+    console.log(data);
+    setFormData(data);
+    setShouldSubmitForm(false);
   };
 
   return (
@@ -32,7 +39,12 @@ const MainPage = (props: any) => {
       </div>
 
       {newInvoicePage ? (
-        <NewInvoice />
+        <NewInvoice
+          setNewInvoicePage={setNewInvoicePage}
+          setShowInvoiceBox={setShowInvoiceBox}
+          setShouldSubmitForm={setShouldSubmitForm}
+          onSubmit={onSubmit}
+        />
       ) : (
         <div className="invoice_List_Add_Box">
           <div className="invoice_Box">
@@ -46,29 +58,30 @@ const MainPage = (props: any) => {
           <img
             src={addInvoiceIcon}
             className="addInvoiceIcon"
-            onClick={addNewInvoicePAge}
+            onClick={addNewInvoicePage}
           />
         </div>
       )}
 
-      {showInvoiceBox && (
-        <div className="invoice_Info_Box">
-          <div className="invoice_Info_subBox">
-            <a className="invoice_Number">#RT3080</a>
-            <a className="invoice_Owner">Dimitri Gugava</a>
-          </div>
-          <div className="invoice_Info_Second_subBox_Main">
-            <div className="invoice_Info_Second_subBox">
-              <a className="invoice_Due_Date">Due 19 Aug 2021</a>
-              <a className="invoice_Ammount">$ 1,800.90</a>
+      {showInvoiceBox &&
+        formData.map((data, index) => (
+          <div className="invoice_Info_Box">
+            <div className="invoice_Info_subBox">
+              <a className="invoice_Number">#RT3080</a>
+              <a className="invoice_Owner">Dimitri Gugava</a>
             </div>
-            <div className="status_Box">
-              <div className="statusOval"></div>
-              <a className="status_text">Paid</a>
+            <div className="invoice_Info_Second_subBox_Main">
+              <div className="invoice_Info_Second_subBox">
+                <a className="invoice_Due_Date">Due 19 Aug 2021</a>
+                <a className="invoice_Ammount">$ 1,800.90</a>
+              </div>
+              <div className="status_Box">
+                <div className="statusOval"></div>
+                <a className="status_text">Paid</a>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        ))}
       {emptyBox && (
         <div className="empty_Box">
           <img className="empty" src={empty} />

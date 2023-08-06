@@ -7,8 +7,8 @@ import * as yup from "yup";
 import { on } from "events";
 import { useState } from "react";
 
-const NewInvoice = () => {
-  const [shouldSubmitForm, setShouldSubmitForm] = useState(false);
+const NewInvoice = (props: any) => {
+  // const [shouldSubmitForm, setShouldSubmitForm] = useState(false);
 
   const schema = yup.object().shape({
     streetAddress: yup.string().required("street address is required"),
@@ -37,26 +37,40 @@ const NewInvoice = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-    setShouldSubmitForm(false); // Reset state after form has been processed
-  };
+  // const onSubmit = (data: any) => {
+  //   console.log(data);
+  //   setShouldSubmitForm(false);
+  // };
 
   const addNewInvoice = () => {
-    setShouldSubmitForm(true);
+    props.setShouldSubmitForm(true);
   };
 
   const resetForm = () => {
     reset();
-    setShouldSubmitForm(false);
+    props.setShouldSubmitForm(false);
+  };
+
+  const goBackToMainPage = () => {
+    props.setNewInvoicePage(false);
+    props.setShowInvoiceBox(true);
   };
 
   return (
-    <form className="newInvoice_Container" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="newInvoice_Container"
+      onSubmit={handleSubmit(props.onSubmit)}
+    >
       <div className="scroolRectangle"></div>
       <div className="goBack">
-        <img className="goBackIcon" src={goBackIcon} />
-        <a className="goBackText">Go back</a>
+        <img
+          className="goBackIcon"
+          src={goBackIcon}
+          onClick={goBackToMainPage}
+        />
+        <a className="goBackText" onClick={goBackToMainPage}>
+          Go back
+        </a>
       </div>
       <a className="newInvoice_Large_Text">New Invoice</a>
       <a className="billForm_Text">Bill Form</a>
